@@ -1,3 +1,4 @@
+import Price from "@/app/_components/Price";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,21 +30,7 @@ function CabinCard({ cabin }) {
             </p>
           </div>
 
-          <p className="flex gap-3 justify-end items-baseline">
-            {discount > 0 ? (
-              <>
-                <span className="text-3xl font-[350]">
-                  ${regularPrice - discount}
-                </span>
-                <span className="line-through font-semibold text-primary-600">
-                  ${regularPrice}
-                </span>
-              </>
-            ) : (
-              <span className="text-3xl font-[350]">${regularPrice}</span>
-            )}
-            <span className="text-primary-200">/ night</span>
-          </p>
+          <Price cabinId={id} />
         </div>
 
         <div className="bg-primary-950 border-t border-t-primary-800 text-right">
