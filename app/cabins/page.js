@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
@@ -12,11 +12,11 @@ export const metadata = {
 };
 
 export default function Page({ searchParams }) {
-  const filter = searchParams?.capacity ?? "all";
+  const filter = React.use(searchParams)?.capacity ?? "all";
 
   return (
     <div>
-      <h1 className="text-4xl mb-5 text-accent-400 font-medium">
+      <h1 className="text-4xl mb-5 text-accent-400 font-medium max-md:text-center">
         Our Luxury Cabins
       </h1>
       <p className="text-primary-200 text-lg mb-10">
@@ -28,7 +28,7 @@ export default function Page({ searchParams }) {
         Welcome to paradise.
       </p>
 
-      <div className="flex justify-end mb-8">
+      <div className="flex justify-end mb-8 max-md:justify-center">
         <Filter />
       </div>
 

@@ -8,8 +8,9 @@ export default function Cabin({ cabin }) {
     cabin;
 
   return (
-    <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
-      <div className="relative scale-[1.15] -translate-x-3">
+    <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24 max-md:grid-cols-1 max-md:gap-10">
+      {/* Image */}
+      <div className="relative scale-[1.15] -translate-x-3 max-md:scale-100 max-md:translate-x-0 max-md:h-[250px] max-md:w-full">
         <Image
           src={image}
           fill
@@ -18,8 +19,9 @@ export default function Cabin({ cabin }) {
         />
       </div>
 
+      {/* Content */}
       <div>
-        <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
+        <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%] max-md:text-4xl max-md:translate-x-0 max-md:w-full">
           Cabin {name}
         </h3>
 
@@ -34,6 +36,7 @@ export default function Cabin({ cabin }) {
               For up to <span className="font-bold">{maxCapacity}</span> guests
             </span>
           </li>
+
           <li className="flex gap-3 items-center">
             <MapPinIcon className="h-5 w-5 text-primary-600" />
             <span className="text-lg">
@@ -41,6 +44,7 @@ export default function Cabin({ cabin }) {
               <span className="font-bold">Dolomites</span> (Italy)
             </span>
           </li>
+
           <li className="flex gap-3 items-center">
             <EyeSlashIcon className="h-5 w-5 text-primary-600" />
             <span className="text-lg">
