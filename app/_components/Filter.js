@@ -16,7 +16,7 @@ function Filter() {
   }
 
   return (
-    <div className="border  border-primary-800 flex">
+    <div className="border border-primary-800 flex">
       <Button
         filter="all"
         handlerFilter={handlerFilter}
@@ -54,7 +54,7 @@ function Button({ filter, handlerFilter, activeFilter, children }) {
     <button
       className={`px-5 py-2 hover:bg-primary-700 ${
         filter === activeFilter ? "bg-primary-700 text-primary-50" : ""
-      }`}
+      } max-md:px-3`}
       onClick={() => handlerFilter(filter)}
     >
       {children}
